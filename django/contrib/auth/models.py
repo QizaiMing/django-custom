@@ -306,6 +306,11 @@ class AbstractUser(AbstractBaseUser, PermissionsMixin):
         },
     )
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
+    job_title = models.CharField(_("job_title"), max_length=50, blank=True)
+    department = models.CharField(_("department"), max_length=50, blank=True)
+    location = models.CharField(_("location"), max_length=50, blank=True)
+    teams = models.CharField(_("teams"), max_length=50, blank=True)
+    picture = models.CharField(_("picture"), max_length=100, blank=True, default='https://cdn.filestackcontent.com/03nBHVFeSAeq7DEtwR4I')
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
     email = models.EmailField(_('email address'), blank=True)
     is_staff = models.BooleanField(
